@@ -35,6 +35,39 @@
 
 
 
+## 🗺️ How it fits together
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+flowchart TB
+    subgraph APP["📝 The app — runs on 127.0.0.1 only"]
+        direction LR
+        B["🌐 Browser<br/>HTML · CSS · JS<br/><i>ch05–06</i>"] -- "HTTP request" --> W["🧭 web.py<br/>Flask routes<br/><i>ch05</i>"]
+        W -- "render" --> T["🎨 Templates<br/>Jinja2 + theme.css<br/><i>ch05–06</i>"]
+        T -- "HTML page" --> B
+        W -- "calls" --> S["🧠 service.py<br/>rules · validation<br/><i>ch04</i>"]
+        S -- "calls" --> R["🗄️ storage.py<br/>SQL only<br/><i>ch03</i>"]
+        R -- "sqlite3" --> D[("💾 notes.db<br/>SQLite + FTS5<br/><i>ch03 · ch07</i>")]
+    end
+    subgraph AUTO["🎭 Automation — proves it works"]
+        direction LR
+        PW["Playwright<br/><i>ch08–09</i>"] -- "drives" --> B
+        PY["pytest<br/><i>ch01–09</i>"] -- "tests" --> S
+    end
+    subgraph SHIP["🚀 Ship — from commit to download"]
+        direction LR
+        G["git<br/>chapter tags"] --> GH["GitHub"] --> A["Actions<br/>CI gate · <i>ch10</i>"] --> PI["PyInstaller"] --> REL["📦 Releases<br/>macOS · Windows · Linux"]
+    end
+    APP ~~~ SHIP
+    classDef app fill:#f3d7f7,stroke:#5316a6,color:#46104c
+    classDef auto fill:#e7c1ee,stroke:#672891,color:#46104c
+    classDef ship fill:#f1e4f4,stroke:#46104c,color:#46104c
+    class B,W,T,S,R,D app
+    class PW,PY auto
+    class G,GH,A,PI,REL ship
+```
+
+<sub>🖼️ Offline copy: [tech-map.svg](docs/diagrams/tech-map.svg) · source: [tech-map.mmd](docs/diagrams/tech-map.mmd)</sub>
 
 ## 📚 Learning path — sections and chapters
 
@@ -44,6 +77,7 @@
 |---|---|---|---|
 | **[00 · How to read this repo](docs/section-1-orientation/chapter-00-how-to-read-this-repo.md)** | The map, the conventions, following along with tags | `Git` `Markdown` | `ch00` |
 | **[01 · Setup: Python, Git, venv](docs/section-1-orientation/chapter-01-setup-python-git-and-venv.md)** | A working toolchain on 🍎 and 🪟, an installable package, the first test | `Python` `pip` `venv` `pytest` `ruff` | `ch01` |
+| **[02 · Architecture & data flow](docs/section-1-orientation/chapter-02-architecture-and-data-flow.md)** | Layers, Mermaid diagrams, documentation that is tested | `Mermaid` `pytest` | `ch02` |
 
 
 

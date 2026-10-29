@@ -12,6 +12,7 @@
 |---|---|---|---|---|
 | **1 · 🧭 Orientation** | [00 · How to read this repo](section-1-orientation/chapter-00-how-to-read-this-repo.md) | The map, the conventions, how tags work | 15 min | `ch00` |
 | | [01 · Setup: Python, Git, venv](section-1-orientation/chapter-01-setup-python-git-and-venv.md) | A working toolchain on 🍎 and 🪟, first test passing | 45 min | `ch01` |
+| | [02 · Architecture & data flow](section-1-orientation/chapter-02-architecture-and-data-flow.md) | Layers, diagrams-as-code, docs that are tested | 30 min | `ch02` |
 
 ## 📌 Suggested reading order
 
@@ -28,4 +29,5 @@ Section 5  🚀  10 → 11          ship it, then make it yours
 | Page | Use it when… |
 |---|---|
 | [🌿 GIT-GUIDE.md](GIT-GUIDE.md) | you need a Git command for 🍎 macOS or 🪟 Windows |
+| [📖 GLOSSARY.md](GLOSSARY.md) | a word like *WSGI*, *fixture* or *FTS5* is new to you |
 | [⬅️ Project README](../README.md) | you want the quick start and the screenshots |

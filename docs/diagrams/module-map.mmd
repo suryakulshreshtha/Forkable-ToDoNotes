@@ -1,0 +1,15 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+flowchart TD
+    M["__main__.py<br/>CLI · picks a port · opens browser"] --> WEB["web.py<br/>create_app() · routes · safety checks"]
+    M --> CFG["config.py<br/>where notes.db lives"]
+    WEB --> SRV["service.py<br/>NoteService · ValidationError"]
+    WEB --> TPL["templates/*.html<br/>static/*.css · *.js"]
+    SRV --> STO["storage.py<br/>NoteRepository · migrations · FTS5"]
+    SRV --> MOD["models.py<br/>Note · ChecklistItem · SearchHit"]
+    STO --> MOD
+    STO --> SQL[("sqlite3<br/>standard library")]
+    WEB -. "runs on" .-> WAI["waitress<br/>WSGI server"]
+    classDef ours fill:#f3d7f7,stroke:#5316a6,color:#46104c
+    classDef lib fill:#f8f2fa,stroke:#af6bbb,color:#46104c,stroke-dasharray: 4 3
+    class M,WEB,CFG,SRV,TPL,STO,MOD ours
+    class SQL,WAI lib

@@ -1,0 +1,23 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+sequenceDiagram
+    autonumber
+    actor U as 🧑 You
+    participant B as 🌐 Browser
+    participant W as web.py (Flask)
+    participant S as service.py
+    participant R as storage.py
+    participant D as 💾 notes.db
+    U->>B: Click "Save"
+    B->>W: POST /notes/7  (title, body)
+    W->>W: Host + Origin checks
+    W->>S: update(7, title, body)
+    S->>S: strip, normalise \r\n, check length
+    S->>R: update_note(7, …)
+    R->>D: UPDATE notes SET … WHERE id = ?
+    D-->>R: 1 row changed
+    R-->>S: Note
+    S-->>W: Note
+    W-->>B: 302 redirect → /notes/7?saved=1
+    B->>W: GET /notes/7?saved=1
+    W-->>B: 200 HTML ("Saved ✓")
+    Note over B,W: Post/Redirect/Get — refreshing never re-submits the form

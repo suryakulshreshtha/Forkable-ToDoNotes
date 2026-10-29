@@ -1,0 +1,27 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+flowchart TB
+    subgraph APP["📝 The app — runs on 127.0.0.1 only"]
+        direction LR
+        B["🌐 Browser<br/>HTML · CSS · JS<br/><i>ch05–06</i>"] -- "HTTP request" --> W["🧭 web.py<br/>Flask routes<br/><i>ch05</i>"]
+        W -- "render" --> T["🎨 Templates<br/>Jinja2 + theme.css<br/><i>ch05–06</i>"]
+        T -- "HTML page" --> B
+        W -- "calls" --> S["🧠 service.py<br/>rules · validation<br/><i>ch04</i>"]
+        S -- "calls" --> R["🗄️ storage.py<br/>SQL only<br/><i>ch03</i>"]
+        R -- "sqlite3" --> D[("💾 notes.db<br/>SQLite + FTS5<br/><i>ch03 · ch07</i>")]
+    end
+    subgraph AUTO["🎭 Automation — proves it works"]
+        direction LR
+        PW["Playwright<br/><i>ch08–09</i>"] -- "drives" --> B
+        PY["pytest<br/><i>ch01–09</i>"] -- "tests" --> S
+    end
+    subgraph SHIP["🚀 Ship — from commit to download"]
+        direction LR
+        G["git<br/>chapter tags"] --> GH["GitHub"] --> A["Actions<br/>CI gate · <i>ch10</i>"] --> PI["PyInstaller"] --> REL["📦 Releases<br/>macOS · Windows · Linux"]
+    end
+    APP ~~~ SHIP
+    classDef app fill:#f3d7f7,stroke:#5316a6,color:#46104c
+    classDef auto fill:#e7c1ee,stroke:#672891,color:#46104c
+    classDef ship fill:#f1e4f4,stroke:#46104c,color:#46104c
+    class B,W,T,S,R,D app
+    class PW,PY auto
+    class G,GH,A,PI,REL ship
