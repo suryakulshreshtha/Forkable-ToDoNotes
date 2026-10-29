@@ -17,6 +17,7 @@
 | | [04 · Service layer & unit tests](section-2-data-and-logic/chapter-04-service-layer-and-unit-tests.md) | Business rules, pytest fixtures, parametrize | 45 min | `ch04` |
 | **3 · 🎨 Web UI** | [05 · Flask routes & templates](section-3-web-ui/chapter-05-flask-routes-and-templates.md) | Pages, forms, a JSON API, local-only safety | 75 min | `ch05` |
 | | [06 · Design system: CSS & JS](section-3-web-ui/chapter-06-design-system-css-and-js.md) | The purple palette, themes, contrast tests, autosave | 60 min | `ch06` |
+| | [07 · Full-text search (FTS5)](section-3-web-ui/chapter-07-full-text-search-fts5.md) | Prefix search, ranking, safe highlighting | 60 min | `ch07` |
 
 ## 📌 Suggested reading order
 

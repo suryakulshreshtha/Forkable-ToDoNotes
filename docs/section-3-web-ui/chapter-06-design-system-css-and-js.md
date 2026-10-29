@@ -234,4 +234,4 @@ git tag -a ch06 -m "Chapter 06 checkpoint: design system"
 
 ---
 
-[⬅️ Chapter 05](chapter-05-flask-routes-and-templates.md) · [📚 Learning path](../README.md) · Next: Chapter 07 arrives at tag `ch07`.
+[⬅️ Chapter 05](chapter-05-flask-routes-and-templates.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 07 · Full-text search](chapter-07-full-text-search-fts5.md)**
