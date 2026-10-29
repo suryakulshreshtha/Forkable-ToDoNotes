@@ -19,6 +19,7 @@
 | | [06 · Design system: CSS & JS](section-3-web-ui/chapter-06-design-system-css-and-js.md) | The purple palette, themes, contrast tests, autosave | 60 min | `ch06` |
 | | [07 · Full-text search (FTS5)](section-3-web-ui/chapter-07-full-text-search-fts5.md) | Prefix search, ranking, safe highlighting | 60 min | `ch07` |
 | **4 · 🎭 Automation** | [08 · Playwright foundations](section-4-automation/chapter-08-playwright-foundations.md) | Live server, page objects, first browser tests | 60 min | `ch08` |
+| | [09 · Playwright showcase](section-4-automation/chapter-09-playwright-showcase.md) | API+UI hybrids, offline proof, emulation, screenshots | 90 min | `ch09` |
 
 ## 📌 Suggested reading order
 

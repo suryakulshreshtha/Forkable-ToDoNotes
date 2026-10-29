@@ -23,4 +23,5 @@ same policy we would give a new teammate.
 ## 🧭 House rules
 
 - Keep the three layers separate: `web.py` → `service.py` → `storage.py`. No SQL outside `storage.py`.
+- Every change to the UI must keep `tests/e2e/test_offline.py` green: nothing may load from outside `127.0.0.1`.
 - Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).

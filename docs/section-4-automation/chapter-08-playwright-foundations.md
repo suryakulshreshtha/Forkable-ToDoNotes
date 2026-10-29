@@ -289,4 +289,4 @@ git tag -a ch08 -m "Chapter 08 checkpoint: Playwright foundations"
 
 ---
 
-[⬅️ Chapter 07](../section-3-web-ui/chapter-07-full-text-search-fts5.md) · [📚 Learning path](../README.md) · Next: Chapter 09 arrives at tag `ch09`.
+[⬅️ Chapter 07](../section-3-web-ui/chapter-07-full-text-search-fts5.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 09 · Playwright showcase](chapter-09-playwright-showcase.md)**
