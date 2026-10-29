@@ -14,6 +14,7 @@
 | | [01 · Setup: Python, Git, venv](section-1-orientation/chapter-01-setup-python-git-and-venv.md) | A working toolchain on 🍎 and 🪟, first test passing | 45 min | `ch01` |
 | | [02 · Architecture & data flow](section-1-orientation/chapter-02-architecture-and-data-flow.md) | Layers, diagrams-as-code, docs that are tested | 30 min | `ch02` |
 | **2 · 🗄️ Data & logic** | [03 · SQLite storage](section-2-data-and-logic/chapter-03-sqlite-storage.md) | Schema, migrations, parameters, transactions | 60 min | `ch03` |
+| | [04 · Service layer & unit tests](section-2-data-and-logic/chapter-04-service-layer-and-unit-tests.md) | Business rules, pytest fixtures, parametrize | 45 min | `ch04` |
 
 ## 📌 Suggested reading order
 

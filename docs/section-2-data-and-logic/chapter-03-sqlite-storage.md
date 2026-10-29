@@ -279,4 +279,4 @@ git tag -a ch03 -m "Chapter 03 checkpoint: SQLite storage"
 
 ---
 
-[⬅️ Chapter 02](../section-1-orientation/chapter-02-architecture-and-data-flow.md) · [📚 Learning path](../README.md) · Next: Chapter 04 arrives at tag `ch04`.
+[⬅️ Chapter 02](../section-1-orientation/chapter-02-architecture-and-data-flow.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 04 · Service layer](chapter-04-service-layer-and-unit-tests.md)**

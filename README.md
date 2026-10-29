@@ -84,6 +84,7 @@ flowchart TB
 | Chapter | What you'll build | Stack | Tag |
 |---|---|---|---|
 | **[03 · SQLite storage](docs/section-2-data-and-logic/chapter-03-sqlite-storage.md)** | Schema, migrations, parameters, per-OS data folder | `SQLite` `sqlite3` | `ch03` |
+| **[04 · Service layer & unit tests](docs/section-2-data-and-logic/chapter-04-service-layer-and-unit-tests.md)** | Business rules, fixtures, parametrize, markers | `Python` `pytest` | `ch04` |
 
 
 
