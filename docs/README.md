@@ -11,6 +11,7 @@
 | Section | Chapter | You will build / learn | ⏱️ | 🏷️ Tag |
 |---|---|---|---|---|
 | **1 · 🧭 Orientation** | [00 · How to read this repo](section-1-orientation/chapter-00-how-to-read-this-repo.md) | The map, the conventions, how tags work | 15 min | `ch00` |
+| | [01 · Setup: Python, Git, venv](section-1-orientation/chapter-01-setup-python-git-and-venv.md) | A working toolchain on 🍎 and 🪟, first test passing | 45 min | `ch01` |
 
 ## 📌 Suggested reading order
 
@@ -26,4 +27,5 @@ Section 5  🚀  10 → 11          ship it, then make it yours
 
 | Page | Use it when… |
 |---|---|
+| [🌿 GIT-GUIDE.md](GIT-GUIDE.md) | you need a Git command for 🍎 macOS or 🪟 Windows |
 | [⬅️ Project README](../README.md) | you want the quick start and the screenshots |

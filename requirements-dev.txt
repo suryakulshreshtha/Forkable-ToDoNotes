@@ -1,0 +1,5 @@
+# Everything needed to develop, test and package the app.
+-r requirements.txt
+
+pytest==9.2.0           # test runner
+ruff==0.17.3            # linter + formatter

@@ -43,6 +43,7 @@
 | Chapter | What you'll build | Stack | Tag |
 |---|---|---|---|
 | **[00 · How to read this repo](docs/section-1-orientation/chapter-00-how-to-read-this-repo.md)** | The map, the conventions, following along with tags | `Git` `Markdown` | `ch00` |
+| **[01 · Setup: Python, Git, venv](docs/section-1-orientation/chapter-01-setup-python-git-and-venv.md)** | A working toolchain on 🍎 and 🪟, an installable package, the first test | `Python` `pip` `venv` `pytest` `ruff` | `ch01` |
 
 
 
@@ -85,6 +86,7 @@ Forkable-ToDoNotes/
 
 ## 🤝 Community
 
+- 🤝 [Contributing](CONTRIBUTING.md) — branch, test, Conventional Commits
 - 🤖 [Rules for AI coding agents](AGENTS.md) — may address reviews, fix CI and resolve conflicts; **never merge**
 - 💜 [Code of conduct](CODE_OF_CONDUCT.md)
 

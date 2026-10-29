@@ -177,4 +177,4 @@ git diff ch04 ch05 -- src/    # the actual code changes
 
 ---
 
-[📚 Learning path](../README.md) · Next: Chapter 01 arrives at tag `ch01`.
+[📚 Learning path](../README.md) · **Next ➡️ [Chapter 01 · Setup](chapter-01-setup-python-git-and-venv.md)**
