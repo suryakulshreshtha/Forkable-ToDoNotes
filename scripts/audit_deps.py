@@ -12,6 +12,9 @@ The policy file lists organisations your project has decided not to depend on
 (one per line). A package is flagged when any of them appears in its name,
 author, maintainer, e-mail or URLs. Exit code 1 means "flagged: review needed".
 
+E-mail addresses are used for the policy check but never printed or written to the
+Markdown table: they are personal data of the maintainers, and the names are enough.
+
 Limits, stated honestly: package metadata says who PUBLISHES a package, not
 who contributed every line. This is a first filter for a human, not a verdict.
 """
@@ -19,6 +22,7 @@ who contributed every line. This is a first filter for a human, not a verdict.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from dataclasses import dataclass
 from importlib.metadata import Distribution, distributions
@@ -26,6 +30,8 @@ from pathlib import Path
 
 SKIP = {"pip", "setuptools", "wheel"}
 DEFAULT_POLICY = Path(__file__).with_name("vendor_policy.txt")
+# "Name <a@b.c>" or a bare "a@b.c" — the whole address, with its angle brackets if any.
+EMAIL = re.compile(r"\s*<[^<>\s]+@[^<>\s]+>|[^\s<>,;]+@[^\s<>,;]+")
 
 
 @dataclass
@@ -37,7 +43,21 @@ class Package:
     license: str
 
     def haystack(self) -> str:
+        # The RAW publisher (e-mail included) so the policy can match on an address's domain.
         return " ".join([self.name, self.publisher, self.url]).lower()
+
+    @property
+    def publisher_display(self) -> str:
+        return publisher_display(self.publisher)
+
+
+def publisher_display(raw: str) -> str:
+    """The publisher as people should read it: names only, e-mail addresses removed."""
+    cleaned = EMAIL.sub("", raw)
+    cleaned = re.sub(r"(\s*,)+", ",", cleaned)  # collapse the commas an address leaves behind
+    cleaned = cleaned.replace(",", ", ").replace("  ", " ")
+    cleaned = cleaned.strip(" ,;").replace('"', "")
+    return cleaned or "(name not published)"
 
 
 def describe(dist: Distribution) -> Package:
@@ -79,7 +99,7 @@ def main() -> int:
     flagged = [(p, term) for p in packages for term in policy if term in p.haystack()]
 
     for p in packages:
-        print(f"{p.name:<28} {p.version:<12} {p.publisher[:34]:<36} {p.license}")
+        print(f"{p.name:<28} {p.version:<12} {p.publisher_display[:34]:<36} {p.license}")
     print(f"\n{len(packages)} packages · policy terms checked: {len(policy)}")
     for p, term in flagged:
         print(f"🚩 {p.name} matches policy term '{term}' — review before shipping.")
@@ -92,7 +112,7 @@ def main() -> int:
             "|---|---|---|---|---|",
         ]
         for p in packages:
-            publisher = p.publisher.replace("|", "/")
+            publisher = p.publisher_display.replace("|", "/")
             rows.append(f"| `{p.name}` | {p.version} | {publisher} | {p.license} | {p.url} |")
         args.markdown.write_text("\n".join(rows) + "\n", encoding="utf-8")
         print(f"📝 Wrote {args.markdown}")

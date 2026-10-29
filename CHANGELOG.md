@@ -6,6 +6,9 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Security
+- The dependency audit no longer prints or commits maintainers' e-mail addresses (names only); the vendor-policy check still uses them.
+
 ## [1.0.0] - 2026-10-29
 
 ### Added
