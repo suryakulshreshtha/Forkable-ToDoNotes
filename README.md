@@ -128,6 +128,11 @@ flowchart TB
 | **[06 · Design system: CSS & JS](docs/section-3-web-ui/chapter-06-design-system-css-and-js.md)** | Purple palette tokens, light/dark, contrast tests, autosave | `CSS` `JavaScript` `WCAG` | `ch06` |
 | **[07 · Full-text search (FTS5)](docs/section-3-web-ui/chapter-07-full-text-search-fts5.md)** | Prefix search, ranking, safe `<mark>` highlights | `SQLite FTS5` `MarkupSafe` | `ch07` |
 
+### 🎭 Section 4 · Automation
+
+| Chapter | What you'll build | Stack | Tag |
+|---|---|---|---|
+| **[08 · Playwright foundations](docs/section-4-automation/chapter-08-playwright-foundations.md)** | Live server fixture, page objects, first browser tests | `Playwright` `pytest` | `ch08` |
 
 
 ### 📌 Suggested reading order

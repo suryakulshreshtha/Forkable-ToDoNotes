@@ -58,4 +58,6 @@ testpaths = ["tests"]
 addopts = ["-ra", "--strict-markers"]
 markers = [
     "unit: fast tests with no browser (auto-applied to tests/unit)",
+    "e2e: Playwright browser tests (auto-applied to tests/e2e)",
+    "smoke: the few tests that prove the app starts and works at all",
 ]

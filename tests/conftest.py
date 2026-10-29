@@ -18,11 +18,14 @@ def pytest_collection_modifyitems(items: list[pytest.Item]) -> None:
     """Mark every test by the folder it lives in, so nobody forgets a marker.
 
     tests/unit/... -> @pytest.mark.unit   (run with: pytest -m unit)
+    tests/e2e/...  -> @pytest.mark.e2e    (run with: pytest -m e2e)
     """
     for item in items:
         parts = Path(str(item.path)).parts
         if "unit" in parts:
             item.add_marker(pytest.mark.unit)
+        elif "e2e" in parts:
+            item.add_marker(pytest.mark.e2e)
 
 
 @pytest.fixture
