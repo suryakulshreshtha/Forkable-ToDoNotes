@@ -68,6 +68,14 @@ Stop it with **Ctrl+C**. Your notes are kept in one SQLite file in your user dat
 (details in [Chapter 03](docs/section-2-data-and-logic/chapter-03-sqlite-storage.md)).
 
 
+## 🖼️ Screenshots
+
+| 🌙 Dark | ☀️ Light |
+|---|---|
+| ![Notes list, dark theme](docs/assets/screenshots/home-dark.png) | ![Notes list, light theme](docs/assets/screenshots/home-light.png) |
+| ![Editor with checklist](docs/assets/screenshots/editor-dark.png) | ![Search results with highlights](docs/assets/screenshots/search-light.png) |
+
+<sub>Captured automatically by Playwright — [`scripts/capture_screenshots.py`](scripts/capture_screenshots.py).</sub>
 
 ## 🗺️ How it fits together
 
@@ -133,6 +141,7 @@ flowchart TB
 | Chapter | What you'll build | Stack | Tag |
 |---|---|---|---|
 | **[08 · Playwright foundations](docs/section-4-automation/chapter-08-playwright-foundations.md)** | Live server fixture, page objects, first browser tests | `Playwright` `pytest` | `ch08` |
+| **[09 · Playwright showcase](docs/section-4-automation/chapter-09-playwright-showcase.md)** | API+UI hybrids, offline proof, emulation, screenshots | `Playwright` | `ch09` |
 
 
 ### 📌 Suggested reading order
