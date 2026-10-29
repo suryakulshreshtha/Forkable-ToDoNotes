@@ -1,0 +1,80 @@
+# Release — pushing a version tag (v1.0.0, v1.1.0 …) builds a double-clickable
+# app on each operating system and attaches them to a GitHub Release.
+#
+# Chapter tags (ch00 … ch11) do NOT match "v*.*.*", so they never trigger this.
+# PyInstaller is not a cross-compiler, hence one runner per operating system.
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build · ${{ matrix.label }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest,  label: linux-x64 }
+          - { os: macos-latest,   label: macos-arm64 }   # Apple Silicon
+          - { os: macos-15-intel, label: macos-x64 }     # Intel Macs
+          - { os: windows-latest, label: windows-x64 }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Build (macOS / Linux)
+        if: runner.os != 'Windows'
+        run: ./scripts/build.sh
+      - name: Build (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/build.ps1
+
+      - name: Smoke test + zip (macOS / Linux)
+        if: runner.os != 'Windows'
+        run: |
+          ./dist/ForkableToDoNotes --version
+          cd dist && zip "ForkableToDoNotes-${{ matrix.label }}.zip" ForkableToDoNotes
+      - name: Smoke test + zip (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          ./dist/ForkableToDoNotes.exe --version
+          Compress-Archive -Path dist/ForkableToDoNotes.exe -DestinationPath "dist/ForkableToDoNotes-${{ matrix.label }}.zip"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: binary-${{ matrix.label }}
+          path: dist/*.zip
+          if-no-files-found: error
+
+  publish:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to create the release
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: binary-*
+          merge-multiple: true
+          path: dist
+      - name: Create the release with all four zips
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          gh release create "$GITHUB_REF_NAME" dist/*.zip
+          --repo "$GITHUB_REPOSITORY"
+          --title "Forkable-ToDoNotes $GITHUB_REF_NAME"
+          --generate-notes
+          --verify-tag
