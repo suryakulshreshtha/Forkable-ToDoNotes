@@ -11,6 +11,7 @@
   <img src="docs/assets/badges/platforms.svg" alt="macOS, Windows and Linux">
   <img src="docs/assets/badges/chapters.svg" alt="5 sections, 12 chapters">
   <img src="docs/assets/badges/license.svg" alt="MIT licence">
+  <a href="https://github.com/suryakulshreshtha/Forkable-ToDoNotes/actions/workflows/ci.yml"><img src="https://github.com/suryakulshreshtha/Forkable-ToDoNotes/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
 </p>
 
 <h3 align="center">📝 A standalone notes + to-do app in Python — and the step-by-step course that builds it.</h3>
@@ -67,6 +68,11 @@ python -m todonotes          # opens http://127.0.0.1:8765/
 Stop it with **Ctrl+C**. Your notes are kept in one SQLite file in your user data folder
 (details in [Chapter 03](docs/section-2-data-and-logic/chapter-03-sqlite-storage.md)).
 
+### 📦 Prefer a double-click app?
+
+Every version tag builds ready-to-run apps for **macOS (Apple Silicon and Intel), Windows and Linux**
+on the [Releases page](https://github.com/suryakulshreshtha/Forkable-ToDoNotes/releases).
+They are not code-signed yet — see [Chapter 10](docs/section-5-ship-and-share/chapter-10-ci-and-releases.md#-notes) for the one-time "Open Anyway" step.
 
 ## 🖼️ Screenshots
 
@@ -143,6 +149,11 @@ flowchart TB
 | **[08 · Playwright foundations](docs/section-4-automation/chapter-08-playwright-foundations.md)** | Live server fixture, page objects, first browser tests | `Playwright` `pytest` | `ch08` |
 | **[09 · Playwright showcase](docs/section-4-automation/chapter-09-playwright-showcase.md)** | API+UI hybrids, offline proof, emulation, screenshots | `Playwright` | `ch09` |
 
+### 🚀 Section 5 · Ship & share
+
+| Chapter | What you'll build | Stack | Tag |
+|---|---|---|---|
+| **[10 · CI & releases](docs/section-5-ship-and-share/chapter-10-ci-and-releases.md)** | A CI gate on 3 OSes, one-file apps on GitHub Releases | `GitHub Actions` `PyInstaller` | `ch10` |
 
 ### 📌 Suggested reading order
 

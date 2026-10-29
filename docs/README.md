@@ -20,6 +20,7 @@
 | | [07 · Full-text search (FTS5)](section-3-web-ui/chapter-07-full-text-search-fts5.md) | Prefix search, ranking, safe highlighting | 60 min | `ch07` |
 | **4 · 🎭 Automation** | [08 · Playwright foundations](section-4-automation/chapter-08-playwright-foundations.md) | Live server, page objects, first browser tests | 60 min | `ch08` |
 | | [09 · Playwright showcase](section-4-automation/chapter-09-playwright-showcase.md) | API+UI hybrids, offline proof, emulation, screenshots | 90 min | `ch09` |
+| **5 · 🚀 Ship & share** | [10 · CI & releases](section-5-ship-and-share/chapter-10-ci-and-releases.md) | GitHub Actions gate, PyInstaller apps for 3 OSes | 60 min | `ch10` |
 
 ## 📌 Suggested reading order
 
