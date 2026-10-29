@@ -6,6 +6,8 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-29
+
 ### Added
 - Course chapters 00–11 in five sections, each ending with a `chNN` Git tag (versions `0.1.0`–`0.11.0`).
 - Notes with title, body and pin; checklists with tick/untick; Markdown and JSON export.
