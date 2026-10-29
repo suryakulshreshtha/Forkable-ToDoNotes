@@ -86,7 +86,7 @@ pip installs a few more packages only on certain systems. Their metadata was che
 | What | When | Downloaded from | Notes |
 |---|---|---|---|
 | Chromium for Playwright | `python -m playwright install chromium` (dev only) | `cdn.playwright.dev`, fallback `playwright.download.prss.microsoft.com` | The build is Google's *Chrome for Testing*; the URLs come from `playwright install --dry-run` |
-| GitHub Actions (`actions/checkout@v7`, `setup-python@v7`, `upload-artifact@v7`, `download-artifact@v8`) | CI only | `github.com/actions/*` | Official actions published by GitHub |
+| GitHub Actions (`checkout` 7.0.1, `setup-python` 7.1.0, `upload-artifact` 7.0.2, `download-artifact` 8.0.2 — each pinned to a commit SHA) | CI only | `github.com/actions/*` | Official actions published by GitHub |
 
 The **running app downloads nothing** — proven on every CI run by
 [`tests/e2e/test_offline.py`](../tests/e2e/test_offline.py).

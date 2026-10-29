@@ -7,6 +7,8 @@ and the project uses [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Security
+- GitHub Actions are pinned to full commit SHAs (version kept in a comment), so a moved tag cannot
+  change what CI or the release build runs. Dependabot keeps the pins current.
 - Every response now carries a strict Content-Security-Policy (no inline script, nothing from other
   sites, no framing) plus `X-Content-Type-Options`, `Referrer-Policy`, cross-origin policies and
   `Cache-Control: no-store` for pages and the API. The one inline theme script moved to

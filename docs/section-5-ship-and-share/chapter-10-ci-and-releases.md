@@ -245,6 +245,12 @@ git tag -a ch10 -m "Chapter 10 checkpoint: CI and releases"
 > `macos-latest` runners are Apple Silicon (arm64); Intel Macs get their own build from the
 > `macos-15-intel` runner. Linux and Windows builds are x64.
 
+> [!IMPORTANT]
+> Every `uses:` line is pinned to a **full commit SHA**, with the version in a trailing comment
+> (`uses: actions/checkout@3d3c42e… # v7.0.1`). A tag like `@v7` can be moved after you reviewed it;
+> a SHA cannot. Dependabot reads the comment and proposes SHA + version updates weekly, and each
+> one must pass the CI gate.
+
 > [!TIP]
 > A one-file app unpacks itself to a temporary folder on every start, so it takes a moment to open.
 > Your notes are never inside the app — they stay in the per-user data folder from Chapter 03.
