@@ -301,4 +301,4 @@ git tag -a ch05 -m "Chapter 05 checkpoint: Flask routes and templates"
 
 ---
 
-[⬅️ Chapter 04](../section-2-data-and-logic/chapter-04-service-layer-and-unit-tests.md) · [📚 Learning path](../README.md) · Next: Chapter 06 arrives at tag `ch06`.
+[⬅️ Chapter 04](../section-2-data-and-logic/chapter-04-service-layer-and-unit-tests.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 06 · Design system](chapter-06-design-system-css-and-js.md)**

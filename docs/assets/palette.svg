@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="388" viewBox="0 0 640 388" role="img" aria-label="The eight palette colours with their hex codes">
+  <rect x="10" y="10" width="620" height="40" rx="10" fill="#af6bbb"/>
+  <text x="30" y="36" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#46104c" letter-spacing="1">ORCHID</text>
+  <text x="610" y="36" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#46104c" text-anchor="end">#af6bbb  --orchid</text>
+  <rect x="10" y="56" width="620" height="40" rx="10" fill="#672891"/>
+  <text x="30" y="82" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">AMETHYST</text>
+  <text x="610" y="82" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#ffffff" text-anchor="end">#672891  --amethyst</text>
+  <rect x="10" y="102" width="620" height="40" rx="10" fill="#603db7"/>
+  <text x="30" y="128" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">IRIS</text>
+  <text x="610" y="128" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#ffffff" text-anchor="end">#603db7  --iris</text>
+  <rect x="10" y="148" width="620" height="40" rx="10" fill="#5316a6"/>
+  <text x="30" y="174" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">ROYAL PURPLE</text>
+  <text x="610" y="174" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#ffffff" text-anchor="end">#5316a6  --royal-purple</text>
+  <rect x="10" y="194" width="620" height="40" rx="10" fill="#5a1a9c"/>
+  <text x="30" y="220" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">VIOLET</text>
+  <text x="610" y="220" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#ffffff" text-anchor="end">#5a1a9c  --violet</text>
+  <rect x="10" y="240" width="620" height="40" rx="10" fill="#601475"/>
+  <text x="30" y="266" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">PURPLE HEART</text>
+  <text x="610" y="266" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#ffffff" text-anchor="end">#601475  --purple-heart</text>
+  <rect x="10" y="286" width="620" height="40" rx="10" fill="#571269"/>
+  <text x="30" y="312" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">GRAPE</text>
+  <text x="610" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#ffffff" text-anchor="end">#571269  --grape</text>
+  <rect x="10" y="332" width="620" height="40" rx="10" fill="#46104c"/>
+  <text x="30" y="358" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1">PLUM</text>
+  <text x="610" y="358" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#ffffff" text-anchor="end">#46104c  --plum</text>
+</svg>

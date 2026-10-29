@@ -125,6 +125,7 @@ flowchart TB
 | Chapter | What you'll build | Stack | Tag |
 |---|---|---|---|
 | **[05 · Flask routes & templates](docs/section-3-web-ui/chapter-05-flask-routes-and-templates.md)** | Pages, forms, JSON API, local-only safety checks | `Flask` `Jinja2` `Waitress` | `ch05` |
+| **[06 · Design system: CSS & JS](docs/section-3-web-ui/chapter-06-design-system-css-and-js.md)** | Purple palette tokens, light/dark, contrast tests, autosave | `CSS` `JavaScript` `WCAG` | `ch06` |
 
 
 
