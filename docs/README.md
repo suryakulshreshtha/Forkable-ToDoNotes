@@ -13,6 +13,7 @@
 | **1 · 🧭 Orientation** | [00 · How to read this repo](section-1-orientation/chapter-00-how-to-read-this-repo.md) | The map, the conventions, how tags work | 15 min | `ch00` |
 | | [01 · Setup: Python, Git, venv](section-1-orientation/chapter-01-setup-python-git-and-venv.md) | A working toolchain on 🍎 and 🪟, first test passing | 45 min | `ch01` |
 | | [02 · Architecture & data flow](section-1-orientation/chapter-02-architecture-and-data-flow.md) | Layers, diagrams-as-code, docs that are tested | 30 min | `ch02` |
+| **2 · 🗄️ Data & logic** | [03 · SQLite storage](section-2-data-and-logic/chapter-03-sqlite-storage.md) | Schema, migrations, parameters, transactions | 60 min | `ch03` |
 
 ## 📌 Suggested reading order
 

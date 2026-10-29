@@ -79,6 +79,11 @@ flowchart TB
 | **[01 · Setup: Python, Git, venv](docs/section-1-orientation/chapter-01-setup-python-git-and-venv.md)** | A working toolchain on 🍎 and 🪟, an installable package, the first test | `Python` `pip` `venv` `pytest` `ruff` | `ch01` |
 | **[02 · Architecture & data flow](docs/section-1-orientation/chapter-02-architecture-and-data-flow.md)** | Layers, Mermaid diagrams, documentation that is tested | `Mermaid` `pytest` | `ch02` |
 
+### 🗄️ Section 2 · Data & logic
+
+| Chapter | What you'll build | Stack | Tag |
+|---|---|---|---|
+| **[03 · SQLite storage](docs/section-2-data-and-logic/chapter-03-sqlite-storage.md)** | Schema, migrations, parameters, per-OS data folder | `SQLite` `sqlite3` | `ch03` |
 
 
 

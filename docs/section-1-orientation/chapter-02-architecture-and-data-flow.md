@@ -266,4 +266,4 @@ git tag -a ch02 -m "Chapter 02 checkpoint: architecture and data flow"
 
 ---
 
-[⬅️ Chapter 01](chapter-01-setup-python-git-and-venv.md) · [📚 Learning path](../README.md) · Next: Chapter 03 arrives at tag `ch03`.
+[⬅️ Chapter 01](chapter-01-setup-python-git-and-venv.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 03 · SQLite storage](../section-2-data-and-logic/chapter-03-sqlite-storage.md)**
