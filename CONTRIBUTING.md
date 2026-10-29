@@ -34,7 +34,7 @@ python -m pytest
 </table>
 
 5. Commit with a [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) message, e.g. `fix(search): ignore empty queries`.
-6. Push and open a pull request.
+6. Push and open a pull request. The **CI gate** check must be green.
 
 ## ✍️ Writing docs
 

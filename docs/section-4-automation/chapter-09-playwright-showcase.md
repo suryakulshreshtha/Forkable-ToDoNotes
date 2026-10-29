@@ -243,4 +243,4 @@ git tag -a ch09 -m "Chapter 09 checkpoint: Playwright showcase"
 
 ---
 
-[⬅️ Chapter 08](chapter-08-playwright-foundations.md) · [📚 Learning path](../README.md) · Next: Chapter 10 arrives at tag `ch10`.
+[⬅️ Chapter 08](chapter-08-playwright-foundations.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 10 · CI & releases](../section-5-ship-and-share/chapter-10-ci-and-releases.md)**

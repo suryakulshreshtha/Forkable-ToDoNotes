@@ -1,0 +1,16 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+flowchart LR
+    subgraph PR["Every push / pull request → ci.yml"]
+        L["🧹 lint<br/>ruff"] --> G{"✅ CI gate"}
+        U["🧪 unit<br/>3 OS × 2 Pythons"] --> G
+        E["🎭 e2e<br/>Playwright"] --> G
+    end
+    subgraph TAG["Push a tag v1.2.3 → release.yml"]
+        B1["🐧 Linux build"] --> P["📦 GitHub Release<br/>4 zips"]
+        B2["🍎 macOS arm64 build"] --> P
+        B3["🍎 macOS x64 build"] --> P
+        B4["🪟 Windows build"] --> P
+    end
+    G -- "merge" --> TAG
+    classDef j fill:#f3d7f7,stroke:#5316a6,color:#46104c
+    class L,U,E,B1,B2,B3,B4,P j
