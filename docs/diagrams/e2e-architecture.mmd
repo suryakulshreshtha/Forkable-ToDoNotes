@@ -1,0 +1,16 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+flowchart LR
+    subgraph PYTEST["🧪 pytest process"]
+        T["test_*.py<br/>user stories"] --> PO["Page objects<br/>HomePage · EditorPage"]
+        FX["Fixtures<br/>live_server · base_url · clean_db"]
+        LS["🧵 Thread: real app<br/>werkzeug server on a free port"]
+        FX --> LS
+    end
+    PO -- "Playwright API" --> BR["🎭 Chromium<br/>(headless)"]
+    BR -- "HTTP to 127.0.0.1" --> LS
+    LS --> DB[("temporary<br/>notes.db")]
+    T -. "page.request<br/>API seeding" .-> LS
+    classDef t fill:#e7c1ee,stroke:#672891,color:#46104c
+    classDef a fill:#f3d7f7,stroke:#5316a6,color:#46104c
+    class T,PO,FX t
+    class LS,BR,DB a

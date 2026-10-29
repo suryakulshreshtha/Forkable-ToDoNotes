@@ -238,4 +238,4 @@ git tag -a ch07 -m "Chapter 07 checkpoint: full-text search"
 
 ---
 
-[⬅️ Chapter 06](chapter-06-design-system-css-and-js.md) · [📚 Learning path](../README.md) · Next: Chapter 08 arrives at tag `ch08`.
+[⬅️ Chapter 06](chapter-06-design-system-css-and-js.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 08 · Playwright foundations](../section-4-automation/chapter-08-playwright-foundations.md)**
