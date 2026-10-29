@@ -154,6 +154,7 @@ flowchart TB
 | Chapter | What you'll build | Stack | Tag |
 |---|---|---|---|
 | **[10 · CI & releases](docs/section-5-ship-and-share/chapter-10-ci-and-releases.md)** | A CI gate on 3 OSes, one-file apps on GitHub Releases | `GitHub Actions` `PyInstaller` | `ch10` |
+| **[11 · Fork, extend & audit](docs/section-5-ship-and-share/chapter-11-fork-extend-and-audit.md)** | Make it yours, audit the supply chain, pick a next feature | `Git` `Dependabot` | `ch11` |
 
 ### 📌 Suggested reading order
 

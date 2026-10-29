@@ -1,0 +1,28 @@
+name: 🐞 Bug report
+description: Something in the app or the docs does not work as described.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: ["macOS (Apple Silicon)", "macOS (Intel)", "Windows", "Linux"]
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter / tag
+      description: Which chapter were you on? e.g. ch07
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      description: Output of `python --version`

@@ -18,7 +18,7 @@ same policy we would give a new teammate.
 | **Merge pull requests** | A human owner reads the diff and presses the button. Always. |
 | Push to `main` directly, move or delete tags | Chapter tags (`ch00` … `ch11`) are the learning path; moving them breaks it for every reader. |
 | Add authorship/attribution lines for AI tools | Commits carry the human author's identity only. |
-| Add a dependency without asking a maintainer first | Every package is reviewed for licence and vendor policy (automated in Chapter 11). |
+| Add a dependency without running `python scripts/audit_deps.py` | See [docs/SUPPLY-CHAIN.md](docs/SUPPLY-CHAIN.md) and the vendor policy. |
 
 ## 🧭 House rules
 

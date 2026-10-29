@@ -42,3 +42,10 @@ python -m pytest
 - Show commands for **both** macOS and Windows using the two-column tables.
 - Link to **official documentation** for every claim about a tool. If you could not verify something, say so.
 
+## 📦 Adding a dependency
+
+Every new package must pass the supply-chain check first — see [docs/SUPPLY-CHAIN.md](docs/SUPPLY-CHAIN.md):
+
+```bash
+python scripts/audit_deps.py
+```
