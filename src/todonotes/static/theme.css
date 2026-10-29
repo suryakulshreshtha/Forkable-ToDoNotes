@@ -1,0 +1,113 @@
+/* ==========================================================================
+   theme.css — design tokens (the ONLY file a fork needs to edit to re-theme)
+
+   Layer 1  Palette   raw colours, named after what they are.
+   Layer 2  Semantic  colours named after what they DO (--bg, --primary …),
+                      pointing at palette colours. Components use only these.
+
+   The eight palette colours were sampled (median pixel of each band) from the
+   reference image used for this project. Tints marked "derived" are NOT in
+   the image: they mix the same hues with white or black so a light theme and
+   readable text are possible. Run `python scripts/check_contrast.py` after
+   any change; tests/unit/test_contrast.py fails if text drops below WCAG AA.
+   ========================================================================== */
+
+:root {
+  /* ---- Layer 1a · sampled palette ------------------------------------- */
+  --orchid:        #af6bbb;
+  --amethyst:      #672891;
+  --iris:          #603db7;
+  --royal-purple:  #5316a6;
+  --violet:        #5a1a9c;
+  --purple-heart:  #601475;
+  --grape:         #571269;
+  --plum:          #46104c;
+
+  /* ---- Layer 1b · derived tints and shades ---------------------------- */
+  --white:         #ffffff;
+  --mist:          #fbf5fd;   /* near-white with a violet cast  */
+  --lilac-100:     #f8f2fa;   /* page background, light theme   */
+  --lilac-200:     #f1e4f4;
+  --lilac-300:     #dcc3e3;   /* borders, light theme           */
+  --orchid-200:    #e7c1ee;   /* links + highlight on dark      */
+  --orchid-100:    #f3d7f7;   /* highlight background, light    */
+  --heather:       #e2cdea;   /* muted text on dark             */
+  --dusk:          #6b4a75;   /* muted text on light            */
+  --night:         #36093b;   /* inputs on dark                 */
+  --rose:          #a3164b;   /* danger                         */
+  --rose-200:      #ffc2d6;
+
+  /* ---- Typography & shape (no web fonts: works offline) --------------- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --radius: 12px;
+  --radius-small: 8px;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.18), 0 6px 18px rgb(0 0 0 / 0.14);
+}
+
+/* ---- Layer 2 · dark theme (default) ----------------------------------- */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:            var(--plum);
+  --surface:       var(--grape);
+  --surface-2:     var(--purple-heart);
+  --input-bg:      var(--night);
+  --border:        color-mix(in srgb, var(--orchid) 45%, transparent);
+  --text:          var(--mist);
+  --text-muted:    var(--heather);
+  --primary:       var(--iris);
+  --primary-hover: var(--royal-purple);
+  --on-primary:    var(--white);
+  --link:          var(--orchid-200);
+  --focus:         var(--orchid-200);
+  --accent:        var(--orchid);
+  --mark-bg:       var(--orchid-200);
+  --mark-text:     var(--plum);
+  --danger:        var(--rose);
+  --on-danger:     var(--white);
+}
+
+/* ---- Layer 2 · light theme -------------------------------------------- */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:            var(--lilac-100);
+  --surface:       var(--white);
+  --surface-2:     var(--lilac-200);
+  --input-bg:      var(--white);
+  --border:        var(--lilac-300);
+  --text:          var(--plum);
+  --text-muted:    var(--dusk);
+  --primary:       var(--royal-purple);
+  --primary-hover: var(--amethyst);
+  --on-primary:    var(--white);
+  --link:          var(--royal-purple);
+  --focus:         var(--iris);
+  --accent:        var(--orchid);
+  --mark-bg:       var(--orchid-100);
+  --mark-text:     var(--plum);
+  --danger:        var(--rose);
+  --on-danger:     var(--white);
+  --shadow:        0 1px 2px rgb(70 16 76 / 0.08), 0 6px 18px rgb(70 16 76 / 0.08);
+}
+
+/* No saved choice yet? Follow the operating system's light/dark setting. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --bg:            var(--lilac-100);
+    --surface:       var(--white);
+    --surface-2:     var(--lilac-200);
+    --input-bg:      var(--white);
+    --border:        var(--lilac-300);
+    --text:          var(--plum);
+    --text-muted:    var(--dusk);
+    --primary:       var(--royal-purple);
+    --primary-hover: var(--amethyst);
+    --link:          var(--royal-purple);
+    --focus:         var(--iris);
+    --mark-bg:       var(--orchid-100);
+    --shadow:        0 1px 2px rgb(70 16 76 / 0.08), 0 6px 18px rgb(70 16 76 / 0.08);
+  }
+}
