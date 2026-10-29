@@ -41,3 +41,16 @@ def repo(db_path: Path) -> NoteRepository:
 @pytest.fixture
 def service(repo: NoteRepository) -> NoteService:
     return NoteService(repo)
+
+
+@pytest.fixture
+def app(db_path: Path):
+    from todonotes.web import create_app
+
+    return create_app(db_path)
+
+
+@pytest.fixture
+def client(app):
+    """Flask's test client: makes requests without starting a real server."""
+    return app.test_client()
