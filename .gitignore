@@ -1,0 +1,27 @@
+# --- Python -------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# --- Tools ----------------------------------------------------------------
+.pytest_cache/
+.ruff_cache/
+test-results/          # Playwright traces/screenshots from failed tests
+
+# --- Build output (PyInstaller) ---------------------------------------------
+build/
+dist/
+*.spec
+
+# --- Your data never belongs in Git ------------------------------------------
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# --- Operating systems ---------------------------------------------------------
+.DS_Store              # macOS Finder
+Thumbs.db              # Windows Explorer
+desktop.ini

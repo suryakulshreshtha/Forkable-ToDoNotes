@@ -1,0 +1,13 @@
+# Line endings: store text with LF in the repository, whatever the OS.
+# Without this, a Windows checkout and a macOS checkout can produce diffs where
+# every single line "changed" (CRLF vs LF). Docs: https://git-scm.com/docs/gitattributes
+* text=auto eol=lf
+
+# Windows-only scripts keep Windows line endings in the working copy.
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# Binary files: never touch them.
+*.png binary
+*.jpg binary
+*.ico binary
