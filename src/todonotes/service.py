@@ -7,12 +7,13 @@ never writes SQL, so every rule here can be unit-tested in milliseconds.
 from __future__ import annotations
 
 from todonotes import APP_NAME, __version__
-from todonotes.models import ChecklistItem, Note
+from todonotes.models import ChecklistItem, Note, SearchHit
 from todonotes.storage import NoteRepository, utc_now
 
 MAX_TITLE = 200
 MAX_BODY = 100_000
 MAX_ITEM = 500
+MAX_QUERY = 200
 
 
 class ValidationError(ValueError):
@@ -108,6 +109,11 @@ class NoteService:
         if note_id is None:
             raise NotFoundError(f"Checklist item {item_id} not found.")
         return note_id
+
+    # --------------------------------------------------------------- search
+    def search(self, query: str) -> list[SearchHit]:
+        query = " ".join(query.split())[:MAX_QUERY]
+        return self.repo.search(query) if query else []
 
     # --------------------------------------------------------------- export
     def export_data(self) -> dict:

@@ -1,0 +1,11 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+flowchart LR
+    Q["⌨️ You type<br/><code>mil eg</code>"] --> N["service.search()<br/>trim · max 200 chars"]
+    N --> F{"FTS5 compiled<br/>into SQLite?"}
+    F -- "yes" --> FQ["to_fts_query()<br/><code>&quot;mil&quot;* &quot;eg&quot;*</code>"] --> M["MATCH · ORDER BY rank<br/>snippet() adds markers"]
+    F -- "no" --> L["LIKE '%mil%' AND '%eg%'<br/>make_snippet() adds markers"]
+    M --> H["highlight filter<br/>1️⃣ escape HTML<br/>2️⃣ markers → &lt;mark&gt;"]
+    L --> H
+    H --> P["🖍️ Results page<br/>with highlights"]
+    classDef step fill:#f3d7f7,stroke:#5316a6,color:#46104c
+    class Q,N,FQ,M,L,H,P step

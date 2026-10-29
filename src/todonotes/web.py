@@ -19,10 +19,12 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from flask import Flask, Response, abort, redirect, render_template, request, url_for
+from markupsafe import Markup, escape
 from werkzeug.exceptions import HTTPException
 
 from todonotes import APP_NAME, __version__
 from todonotes.config import default_db_path
+from todonotes.models import MARK_END, MARK_START
 from todonotes.service import NoteService, NotFoundError, ValidationError
 from todonotes.storage import NoteRepository
 
@@ -38,6 +40,16 @@ def localtime(iso: str) -> str:
         return iso
 
 
+def highlight(snippet: str) -> Markup:
+    """Jinja filter: escape the snippet FIRST, then turn our markers into <mark>.
+
+    Order matters. Escaping first means a note containing "<script>" is shown
+    as text, while the <mark> tags we add afterwards are real HTML.
+    """
+    safe = str(escape(snippet))
+    return Markup(safe.replace(MARK_START, "<mark>").replace(MARK_END, "</mark>"))
+
+
 def create_app(db_path: Path | str | None = None) -> Flask:
     """Application factory: build a fully configured Flask app.
 
@@ -50,12 +62,14 @@ def create_app(db_path: Path | str | None = None) -> Flask:
     app.extensions["todonotes"] = service
 
     app.add_template_filter(localtime)
+    app.add_template_filter(highlight)
 
     @app.context_processor
     def inject_globals() -> dict:
         return {
             "app_name": APP_NAME,
             "version": __version__,
+            "search_engine": "FTS5" if repo.fts_enabled else "LIKE",
         }
 
     # ------------------------------------------------------------ safety net
@@ -111,6 +125,9 @@ def create_app(db_path: Path | str | None = None) -> Flask:
     # ------------------------------------------------------------ HTML pages
     @app.get("/")
     def index():
+        query = request.args.get("q", "").strip()
+        if query:
+            return render_template("index.html", hits=service.search(query), q=query, notes=None)
         return render_template("index.html", notes=service.list(), q="", hits=None)
 
     @app.get("/notes/new")
@@ -200,10 +217,14 @@ def create_app(db_path: Path | str | None = None) -> Flask:
             "status": "ok",
             "app": APP_NAME,
             "version": __version__,
+            "search": "fts5" if repo.fts_enabled else "like",
         }
 
     @app.get("/api/notes")
     def api_list_notes():
+        query = request.args.get("q", "").strip()
+        if query:
+            return {"hits": [hit.to_dict() for hit in service.search(query)]}
         return {"notes": [note.to_dict() for note in service.list()]}
 
     @app.post("/api/notes")
