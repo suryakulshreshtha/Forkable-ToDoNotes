@@ -10,6 +10,7 @@ from pathlib import Path
 
 import pytest
 
+from todonotes.service import NoteService
 from todonotes.storage import NoteRepository
 
 
@@ -35,3 +36,8 @@ def repo(db_path: Path) -> NoteRepository:
     repository = NoteRepository(db_path)
     repository.initialize()
     return repository
+
+
+@pytest.fixture
+def service(repo: NoteRepository) -> NoteService:
+    return NoteService(repo)
