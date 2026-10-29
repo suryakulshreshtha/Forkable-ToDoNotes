@@ -1,0 +1,29 @@
+# 📚 The learning path
+
+> Build **Forkable-ToDoNotes** from an empty folder to a tested, downloadable
+> app — one chapter at a time. Every chapter ends with a Git **tag**, so you can
+> jump to the exact code of any step with `git switch --detach chNN`.
+
+<p align="center"><img src="assets/banner.svg" alt="Forkable-ToDoNotes banner" width="100%"></p>
+
+## 🧭 Sections and chapters
+
+| Section | Chapter | You will build / learn | ⏱️ | 🏷️ Tag |
+|---|---|---|---|---|
+| **1 · 🧭 Orientation** | [00 · How to read this repo](section-1-orientation/chapter-00-how-to-read-this-repo.md) | The map, the conventions, how tags work | 15 min | `ch00` |
+
+## 📌 Suggested reading order
+
+```text
+Section 1  🧭  00 → 01 → 02     read the map, set up, see the whole design
+Section 2  🗄️  03 → 04          data first, rules second (no web yet!)
+Section 3  🎨  05 → 06 → 07     pages, then looks, then search
+Section 4  🎭  08 → 09          prove it works in a real browser
+Section 5  🚀  10 → 11          ship it, then make it yours
+```
+
+## 🧰 Reference pages
+
+| Page | Use it when… |
+|---|---|
+| [⬅️ Project README](../README.md) | you want the quick start and the screenshots |

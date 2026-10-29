@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="t d">
+  <title id="t">Forkable-ToDoNotes</title>
+  <desc id="d">Eight satin bands from Orchid to Plum behind the project title.</desc>
+  <defs>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.18"/>
+      <stop offset="0.45" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.7" stop-color="#000" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.32"/>
+    </linearGradient>
+  </defs>
+  <rect y="0" width="1200" height="40" fill="#af6bbb"/>
+  <rect y="40" width="1200" height="40" fill="#672891"/>
+  <rect y="80" width="1200" height="40" fill="#603db7"/>
+  <rect y="120" width="1200" height="40" fill="#5316a6"/>
+  <rect y="160" width="1200" height="40" fill="#5a1a9c"/>
+  <rect y="200" width="1200" height="40" fill="#601475"/>
+  <rect y="240" width="1200" height="40" fill="#571269"/>
+  <rect y="280" width="1200" height="40" fill="#46104c"/>
+  <rect width="1200" height="320" fill="url(#sheen)"/>
+  <rect x="60" y="78" width="760" height="164" rx="22" fill="#2a0630" fill-opacity="0.55"/>
+  <text x="96" y="152" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="58" font-weight="800" fill="#fbf5fd">Forkable-ToDoNotes</text>
+  <text x="98" y="200" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#e7c1ee">Build a standalone Python notes app — chapter by chapter</text>
+  <text x="98" y="228" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#e2cdea">Flask · SQLite FTS5 · Playwright · GitHub Actions · works offline</text>
+</svg>
