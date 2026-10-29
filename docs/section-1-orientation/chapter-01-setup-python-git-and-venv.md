@@ -377,4 +377,4 @@ More commands, side by side for both systems: [🌿 GIT-GUIDE.md](../GIT-GUIDE.m
 
 ---
 
-[⬅️ Chapter 00](chapter-00-how-to-read-this-repo.md) · [📚 Learning path](../README.md) · Next: Chapter 02 arrives at tag `ch02`.
+[⬅️ Chapter 00](chapter-00-how-to-read-this-repo.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 02 · Architecture](chapter-02-architecture-and-data-flow.md)**

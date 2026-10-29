@@ -1,0 +1,24 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f3d7f7", "primaryTextColor": "#46104c", "primaryBorderColor": "#5316a6", "lineColor": "#672891", "secondaryColor": "#e7c1ee", "tertiaryColor": "#f8f2fa", "fontFamily": "Helvetica, Arial, sans-serif"}}}%%
+erDiagram
+    NOTES ||--o{ CHECKLIST_ITEMS : "has"
+    NOTES ||--|| NOTES_FTS : "indexed by (ch07)"
+    NOTES {
+        int id PK
+        text title
+        text body
+        int pinned "0 or 1"
+        text created_at "ISO 8601 UTC"
+        text updated_at "ISO 8601 UTC"
+    }
+    CHECKLIST_ITEMS {
+        int id PK
+        int note_id FK "ON DELETE CASCADE"
+        text text
+        int done "0 or 1"
+        int position
+    }
+    NOTES_FTS {
+        int rowid "= notes.id"
+        text title "index only"
+        text body "index only"
+    }
