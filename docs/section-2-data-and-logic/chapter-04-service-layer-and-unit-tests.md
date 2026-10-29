@@ -198,4 +198,4 @@ git tag -a ch04 -m "Chapter 04 checkpoint: service layer and unit tests"
 
 ---
 
-[⬅️ Chapter 03](chapter-03-sqlite-storage.md) · [📚 Learning path](../README.md) · Next: Chapter 05 arrives at tag `ch05`.
+[⬅️ Chapter 03](chapter-03-sqlite-storage.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 05 · Flask routes & templates](../section-3-web-ui/chapter-05-flask-routes-and-templates.md)**

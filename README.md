@@ -32,6 +32,40 @@
 | 🔒 **Privacy** | Listens on `127.0.0.1` only. No account, no cloud, no analytics — and a test proves nothing leaves your machine |
 | 🗺️ **Part of** | The [`Forkable*` index](https://github.com/suryakulshreshtha/SuryaKulshreshtha) — clone it, run it, keep it or throw it away |
 
+## ⚡ Quick start
+
+<table>
+<tr><th width="50%">🍎 macOS · Terminal (zsh)</th><th width="50%">🪟 Windows · PowerShell</th></tr>
+<tr>
+<td>
+
+```bash
+git clone https://github.com/suryakulshreshtha/Forkable-ToDoNotes.git
+cd Forkable-ToDoNotes
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m todonotes          # opens http://127.0.0.1:8765/
+```
+
+</td>
+<td>
+
+```powershell
+git clone https://github.com/suryakulshreshtha/Forkable-ToDoNotes.git
+cd Forkable-ToDoNotes
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m todonotes          # opens http://127.0.0.1:8765/
+```
+
+</td>
+</tr>
+</table>
+
+Stop it with **Ctrl+C**. Your notes are kept in one SQLite file in your user data folder
+(details in [Chapter 03](docs/section-2-data-and-logic/chapter-03-sqlite-storage.md)).
 
 
 
@@ -86,6 +120,11 @@ flowchart TB
 | **[03 · SQLite storage](docs/section-2-data-and-logic/chapter-03-sqlite-storage.md)** | Schema, migrations, parameters, per-OS data folder | `SQLite` `sqlite3` | `ch03` |
 | **[04 · Service layer & unit tests](docs/section-2-data-and-logic/chapter-04-service-layer-and-unit-tests.md)** | Business rules, fixtures, parametrize, markers | `Python` `pytest` | `ch04` |
 
+### 🎨 Section 3 · Web UI
+
+| Chapter | What you'll build | Stack | Tag |
+|---|---|---|---|
+| **[05 · Flask routes & templates](docs/section-3-web-ui/chapter-05-flask-routes-and-templates.md)** | Pages, forms, JSON API, local-only safety checks | `Flask` `Jinja2` `Waitress` | `ch05` |
 
 
 
@@ -127,6 +166,7 @@ Forkable-ToDoNotes/
 ## 🤝 Community
 
 - 🤝 [Contributing](CONTRIBUTING.md) — branch, test, Conventional Commits
+- 🔐 [Security policy](SECURITY.md) — what the app protects, how to report a problem
 - 🤖 [Rules for AI coding agents](AGENTS.md) — may address reviews, fix CI and resolve conflicts; **never merge**
 - 💜 [Code of conduct](CODE_OF_CONDUCT.md)
 
