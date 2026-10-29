@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Error {{ code }}{% endblock %}
+{% block content %}
+<div class="empty-state">
+  <p class="empty-emoji" aria-hidden="true">{{ "🔍" if code == 404 else "⚠️" }}</p>
+  <h1 class="page-title">{{ "Not found" if code == 404 else "Something needs fixing" }}</h1>
+  <p>{{ message }}</p>
+  <p><a href="{{ url_for('index') }}">Back to all notes</a></p>
+</div>
+{% endblock %}

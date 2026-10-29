@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}{{ note.display_title if note else "New note" }}{% endblock %}
+{% block content %}
+<div class="editor-layout">
+  <section class="editor" aria-labelledby="editor-heading">
+    <h1 id="editor-heading" class="page-title">{{ "Edit note" if note else "New note" }}</h1>
+
+    <form id="note-form" method="post"
+          action="{{ url_for('update_note', note_id=note.id) if note else url_for('create_note') }}"
+          {% if note %}data-note-id="{{ note.id }}"{% endif %}>
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" maxlength="200"
+             value="{{ note.title if note else '' }}" placeholder="Untitled note" {% if not note %}autofocus{% endif %}>
+
+      <label for="body">Note</label>
+      <textarea id="body" name="body" rows="14" maxlength="100000"
+                placeholder="Write anything…">{{ note.body if note else '' }}</textarea>
+
+      <label class="checkbox-row">
+        <input type="checkbox" name="pinned" {% if note and note.pinned %}checked{% endif %}>
+        Pin to the top
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="button primary">{{ "Save" if note else "Create note" }}</button>
+        <a class="button ghost" href="{{ url_for('index') }}">Back to notes</a>
+        <span class="save-status" role="status" aria-live="polite">{% if saved %}Saved ✓{% endif %}</span>
+      </div>
+    </form>
+  </section>
+
+  {% if note %}
+  <section id="checklist" class="checklist" aria-labelledby="checklist-heading">
+    <h2 id="checklist-heading">Checklist
+      {% if note.items %}<span class="count">{{ note.done_count }}/{{ note.items | length }}</span>{% endif %}
+    </h2>
+    <ul class="items">
+      {% for item in note.items %}
+      <li class="item{% if item.done %} done{% endif %}" data-item-id="{{ item.id }}">
+        <form method="post" action="{{ url_for('toggle_item', item_id=item.id) }}" class="inline toggle-form">
+          <button type="submit" class="check" role="checkbox"
+                  aria-checked="{{ 'true' if item.done else 'false' }}"
+                  aria-label="{{ item.text }}">
+            <span aria-hidden="true">{{ "✔" if item.done else "" }}</span>
+          </button>
+        </form>
+        <span class="item-text">{{ item.text }}</span>
+        <form method="post" action="{{ url_for('delete_item', item_id=item.id) }}" class="inline">
+          <button type="submit" class="button small ghost" aria-label="Remove “{{ item.text }}”">✕</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+    <form method="post" action="{{ url_for('add_item', note_id=note.id) }}" class="add-item">
+      <label for="new-item" class="visually-hidden">New checklist item</label>
+      <input id="new-item" name="text" type="text" maxlength="500" placeholder="Add a to-do…" required>
+      <button type="submit" class="button">Add</button>
+    </form>
+  </section>
+
+  <section class="danger-zone" aria-label="Delete note">
+    <details>
+      <summary>Delete this note…</summary>
+      <form method="post" action="{{ url_for('delete_note', note_id=note.id) }}">
+        <p>This removes the note and its checklist. There is no undo (but you can export a backup first).</p>
+        <button type="submit" class="button danger">Yes, delete it</button>
+      </form>
+    </details>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

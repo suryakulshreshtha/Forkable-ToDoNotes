@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{% if q %}Search: {{ q }}{% else %}All notes{% endif %}{% endblock %}
+{% block content %}
+  <h1 class="page-title">All notes <span class="count">{{ notes | length }}</span></h1>
+  {% if notes %}
+  <section class="grid" aria-label="Notes">
+    {% for note in notes %}
+      {% include "_note_card.html" %}
+    {% endfor %}
+  </section>
+  {% else %}
+  <div class="empty-state">
+    <p class="empty-emoji" aria-hidden="true">🗒️</p>
+    <p>No notes yet.</p>
+    <p><a class="button primary" href="{{ url_for('new_note') }}">Create your first note</a></p>
+  </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Notes{% endblock %} · {{ app_name }}</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('index') }}"><span aria-hidden="true">📝</span> {{ app_name }}</a>
+    <nav class="actions" aria-label="Main">
+      <a class="button primary" href="{{ url_for('new_note') }}"><span aria-hidden="true">＋</span> New note</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <span>{{ app_name }} v{{ version }} · works offline</span>
+    <span>Export: <a href="{{ url_for('export_json') }}">JSON</a> · <a href="{{ url_for('export_markdown') }}">Markdown</a></span>
+  </footer>
+</body>
+</html>
