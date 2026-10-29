@@ -1,0 +1,18 @@
+# Vendor policy for scripts/audit_deps.py
+# One organisation (or product family) per line, matched case-insensitively
+# against each package's name, author, maintainer, e-mail and URLs.
+#
+# This project's policy: no dependencies from China-based technology vendors.
+# Edit this list to match YOUR organisation's policy — it is a first filter
+# for a human review, not a complete or authoritative list.
+alibaba
+aliyun
+qwen
+tencent
+baidu
+bytedance
+huawei
+deepseek
+zhipu
+moonshot
+xiaomi
