@@ -10,6 +10,8 @@
 | All SQL uses `?` parameters — no string-built queries with user input | `storage.py` |
 | Templates auto-escape; search highlights escape **before** adding `<mark>` | `templates/`, `web.py → highlight` |
 | No network calls, CDNs, fonts or analytics — proven by a Playwright test | `tests/e2e/test_offline.py` |
+| Content-Security-Policy: scripts and styles only from the app itself, no inline script, no framing (`frame-ancestors 'none'`) — a Playwright test proves the app obeys it and the browser refuses an injected script | `web.py → add_security_headers`, `tests/e2e/test_csp.py` |
+| `nosniff`, `same-origin` referrer policy, same-origin resource and opener policies, no caching of pages or the API | same function, `tests/unit/test_security_headers.py` |
 
 ## Reporting a vulnerability
 

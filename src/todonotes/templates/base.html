@@ -4,13 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Notes{% endblock %} · {{ app_name }}</title>
-  <script>
-    /* Apply the saved theme before the first paint (avoids a flash of the wrong theme). */
-    try {
-      var saved = localStorage.getItem("todonotes-theme");
-      if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
-    } catch (e) { /* private mode or blocked storage: follow the OS setting */ }
-  </script>
+  <script src="{{ url_for('static', filename='theme-init.js') }}"></script>
   <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ url_for('static', filename='theme.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">

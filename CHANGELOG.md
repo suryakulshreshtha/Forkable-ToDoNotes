@@ -7,6 +7,10 @@ and the project uses [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Security
+- Every response now carries a strict Content-Security-Policy (no inline script, nothing from other
+  sites, no framing) plus `X-Content-Type-Options`, `Referrer-Policy`, cross-origin policies and
+  `Cache-Control: no-store` for pages and the API. The one inline theme script moved to
+  `static/theme-init.js`. Unit tests and a Playwright test cover it.
 - The dependency audit no longer prints or commits maintainers' e-mail addresses (names only); the vendor-policy check still uses them.
 
 ## [1.0.0] - 2026-10-29

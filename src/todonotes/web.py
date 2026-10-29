@@ -31,6 +31,31 @@ from todonotes.storage import NoteRepository
 LOCAL_HOSTNAMES = {"127.0.0.1", "localhost", "::1"}
 UNSAFE_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
 
+# Sent with every response. The app needs nothing from outside itself, so the policy says so:
+# scripts, styles and images only from this origin, no inline script, no framing, no plugins.
+CONTENT_SECURITY_POLICY = "; ".join(
+    [
+        "default-src 'none'",
+        "script-src 'self'",
+        "style-src 'self'",
+        "img-src 'self'",
+        "connect-src 'self'",
+        "form-action 'self'",
+        "base-uri 'none'",
+        "frame-ancestors 'none'",
+    ]
+)
+SECURITY_HEADERS = {
+    "Content-Security-Policy": CONTENT_SECURITY_POLICY,
+    "X-Content-Type-Options": "nosniff",  # never guess a different type for a response
+    # Not "no-referrer": with it Chrome sends `Origin: null` on form posts, which our own
+    # cross-site check (rightly) refuses. "same-origin" leaks nothing to other sites.
+    "Referrer-Policy": "same-origin",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Resource-Policy": "same-origin",
+    "X-Frame-Options": "DENY",  # older browsers; CSP frame-ancestors covers the rest
+}
+
 
 def localtime(iso: str) -> str:
     """Jinja filter: '2026-10-29T07:15:00+00:00' -> '29 Oct 2026, 08:15' in local time."""
@@ -97,6 +122,15 @@ def create_app(db_path: Path | str | None = None) -> Flask:
             origin = request.headers.get("Origin")
             if origin is not None and urlsplit(origin).netloc != request.host:
                 abort(403, "Cross-site request refused.")
+
+    @app.after_request
+    def add_security_headers(response: Response) -> Response:
+        """Attach the security headers to EVERY response, errors and downloads included."""
+        for name, value in SECURITY_HEADERS.items():
+            response.headers.setdefault(name, value)
+        if request.endpoint != "static":  # notes are personal: pages and API are not cached
+            response.headers.setdefault("Cache-Control", "no-store")
+        return response
 
     # ----------------------------------------------------------- error pages
     def wants_json() -> bool:

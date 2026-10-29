@@ -213,8 +213,10 @@ git tag -a ch06 -m "Chapter 06 checkpoint: design system"
 > It is used for borders and decoration, never for words.
 
 > [!TIP]
-> A tiny inline script in `base.html` applies the saved theme **before** the page paints,
-> so you never see a flash of the wrong theme.
+> A tiny script, [`theme-init.js`](../../src/todonotes/static/theme-init.js), is loaded in the
+> `<head>` and applies the saved theme **before** the page paints, so you never see a flash of
+> the wrong theme. It is a separate file (not an inline `<script>`) because the app's
+> Content-Security-Policy allows scripts only from the app itself.
 
 > [!NOTE]
 > `localStorage` can throw when storage is blocked (some privacy settings). Every access is
