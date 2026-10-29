@@ -1,0 +1,18 @@
+name: 🎓 Question about a chapter
+description: Something in a chapter is unclear? That is a docs bug — tell us.
+labels: ["question", "docs"]
+body:
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter
+      description: e.g. "Chapter 07 — Full-text search"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Quote the sentence or code that confused you.
+    validations:
+      required: true
