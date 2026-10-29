@@ -1,0 +1,20 @@
+{#- One note as a card. Used by index.html for both the list and search results.
+    Expects: `note`, and optionally `snippet` (search results only). -#}
+<article class="card{% if note.pinned %} pinned{% endif %}" data-note-id="{{ note.id }}">
+  <h2 class="card-title">
+    <a href="{{ url_for('show_note', note_id=note.id) }}">{{ note.display_title }}</a>
+    {% if note.pinned %}<span class="badge" title="Pinned">📌 <span class="visually-hidden">Pinned</span></span>{% endif %}
+  </h2>
+  {% if note.body %}
+  <p class="card-body">{{ note.body | truncate(180) }}</p>
+  {% endif %}
+  <footer class="card-meta">
+    {% if note.items %}
+    <span class="progress" title="Checklist progress">☑ {{ note.done_count }}/{{ note.items | length }}</span>
+    {% endif %}
+    <time datetime="{{ note.updated_at }}">{{ note.updated_at | localtime }}</time>
+    <form method="post" action="{{ url_for('toggle_pin', note_id=note.id) }}" class="inline">
+      <button type="submit" class="button small ghost">{{ "Unpin" if note.pinned else "Pin" }}</button>
+    </form>
+  </footer>
+</article>

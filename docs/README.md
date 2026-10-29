@@ -15,6 +15,7 @@
 | | [02 · Architecture & data flow](section-1-orientation/chapter-02-architecture-and-data-flow.md) | Layers, diagrams-as-code, docs that are tested | 30 min | `ch02` |
 | **2 · 🗄️ Data & logic** | [03 · SQLite storage](section-2-data-and-logic/chapter-03-sqlite-storage.md) | Schema, migrations, parameters, transactions | 60 min | `ch03` |
 | | [04 · Service layer & unit tests](section-2-data-and-logic/chapter-04-service-layer-and-unit-tests.md) | Business rules, pytest fixtures, parametrize | 45 min | `ch04` |
+| **3 · 🎨 Web UI** | [05 · Flask routes & templates](section-3-web-ui/chapter-05-flask-routes-and-templates.md) | Pages, forms, a JSON API, local-only safety | 75 min | `ch05` |
 
 ## 📌 Suggested reading order
 

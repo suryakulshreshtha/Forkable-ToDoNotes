@@ -14,7 +14,11 @@ requires-python = ">=3.10"
 license = "MIT"
 authors = [{ name = "Surya Kulshreshtha" }]
 keywords = ["notes", "todo", "flask", "sqlite", "playwright", "learning", "forkable"]
-dependencies = []
+# Ranges here (what the code is compatible with); exact pins live in requirements.txt.
+dependencies = [
+    "flask>=3.1,<4",
+    "waitress>=3.0,<4",
+]
 
 [project.scripts]
 todonotes = "todonotes.__main__:main"
@@ -29,6 +33,8 @@ version = { attr = "todonotes.__version__" }
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+todonotes = ["templates/*.html", "static/*"]
 
 # ---------------------------------------------------------------- ruff (lint)
 [tool.ruff]
