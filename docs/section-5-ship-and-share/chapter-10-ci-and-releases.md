@@ -266,4 +266,4 @@ git tag -a ch10 -m "Chapter 10 checkpoint: CI and releases"
 
 ---
 
-[⬅️ Chapter 09](../section-4-automation/chapter-09-playwright-showcase.md) · [📚 Learning path](../README.md) · Next: Chapter 11 arrives at tag `ch11`.
+[⬅️ Chapter 09](../section-4-automation/chapter-09-playwright-showcase.md) · [📚 Learning path](../README.md) · **Next ➡️ [Chapter 11 · Fork, extend & audit](chapter-11-fork-extend-and-audit.md)**

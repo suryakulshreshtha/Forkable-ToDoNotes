@@ -21,6 +21,7 @@
 | **4 · 🎭 Automation** | [08 · Playwright foundations](section-4-automation/chapter-08-playwright-foundations.md) | Live server, page objects, first browser tests | 60 min | `ch08` |
 | | [09 · Playwright showcase](section-4-automation/chapter-09-playwright-showcase.md) | API+UI hybrids, offline proof, emulation, screenshots | 90 min | `ch09` |
 | **5 · 🚀 Ship & share** | [10 · CI & releases](section-5-ship-and-share/chapter-10-ci-and-releases.md) | GitHub Actions gate, PyInstaller apps for 3 OSes | 60 min | `ch10` |
+| | [11 · Fork, extend & audit](section-5-ship-and-share/chapter-11-fork-extend-and-audit.md) | Make it yours, supply-chain audit, where next | 45 min | `ch11` |
 
 ## 📌 Suggested reading order
 
@@ -38,4 +39,7 @@ Section 5  🚀  10 → 11          ship it, then make it yours
 |---|---|
 | [🌿 GIT-GUIDE.md](GIT-GUIDE.md) | you need a Git command for 🍎 macOS or 🪟 Windows |
 | [📖 GLOSSARY.md](GLOSSARY.md) | a word like *WSGI*, *fixture* or *FTS5* is new to you |
+| [📝 NOTES.md](NOTES.md) | you want every chapter's key notes on one page |
+| [🔗 SOURCES.md](SOURCES.md) | you want the official documentation behind a claim |
+| [🛡️ SUPPLY-CHAIN.md](SUPPLY-CHAIN.md) | you want to know exactly what gets installed, and from whom |
 | [⬅️ Project README](../README.md) | you want the quick start and the screenshots |
