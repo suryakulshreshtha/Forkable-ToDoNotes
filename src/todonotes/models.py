@@ -52,3 +52,19 @@ class Note:
         data = asdict(self)
         data["display_title"] = self.display_title
         return data
+
+
+# Marker characters wrapped around matched words in search snippets.
+# They are control characters, so they can never appear in normal typed text,
+# and the web layer swaps them for <mark>…</mark> *after* HTML-escaping.
+MARK_START = "\x02"
+MARK_END = "\x03"
+
+
+@dataclass
+class SearchHit:
+    note: Note
+    snippet: str  # contains MARK_START / MARK_END around matches
+
+    def to_dict(self) -> dict:
+        return {"note": self.note.to_dict(), "snippet": self.snippet}

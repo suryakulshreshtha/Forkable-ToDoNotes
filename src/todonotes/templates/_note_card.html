@@ -5,7 +5,9 @@
     <a href="{{ url_for('show_note', note_id=note.id) }}">{{ note.display_title }}</a>
     {% if note.pinned %}<span class="badge" title="Pinned">📌 <span class="visually-hidden">Pinned</span></span>{% endif %}
   </h2>
-  {% if note.body %}
+  {% if snippet %}
+  <p class="card-body snippet">{{ snippet | highlight }}</p>
+  {% elif note.body %}
   <p class="card-body">{{ note.body | truncate(180) }}</p>
   {% endif %}
   <footer class="card-meta">
