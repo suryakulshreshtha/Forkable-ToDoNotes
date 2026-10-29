@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="docs/assets/banner.svg" alt="Forkable-ToDoNotes — build a standalone Python notes app, chapter by chapter" width="100%">
-</p>
+<!-- forkable-card:start -->
+![Forkable-ToDoNotes: a standalone, offline Python notes app, built in 12 chapters you can check out as Git tags](.github/assets/forkable-card.png)
+<!-- forkable-card:end -->
 
 <p align="center">
   <img src="docs/assets/badges/python.svg" alt="Python 3.10 to 3.13">
